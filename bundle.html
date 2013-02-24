@@ -1,22 +1,23 @@
 <html>
+  <head>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8'>
+    <title>Example</title>
+    <script src="iconv.js"></script>
+    <script src="test/utf8.min.js"></script>
+  </head>
   <body>
-<script src="iconv.js"></script>
 <script content-type="text/javascript">
   // var inArray = Module.intArrayFromString('€');
   // inArray.pop();
-  var inArray = [0xE2, 0x82, 0xAC];
-  console.log('in');
-  console.log(inArray);
-  var converted = iconv_convert(inArray, 'UTF-8', 'ISO8859-15');
-  console.log('converted');
-  console.log(converted);
-  // converted.pop();
-  var result = iconv_convert(converted, 'ISO8859-15', 'UTF-8');
-  console.log('back');
-  console.log(result);
-  result.push(0);
-  var str = Module.intArrayToString(result);
-  console.log(str);
+    var utf8Bytes = utf8.stringToUTF8Bytes('¼½');
+    console.log(utf8Bytes);
+    var isoBytes = iconv.convert(utf8Bytes, 'UTF-8', 'ISO8859-1');
+    console.log(isoBytes);
+    // expext(isoBytes).toEqual([0xBC, 0xBD]);
+    var utf8Bytes = utf8.stringToUTF8Bytes('¼½');
+    var isoBytes = iconv.convert(utf8Bytes, 'UTF-8', 'ISO8859-1');
+    // expect(isoBytes).toEqual([0xBC, 0xBD]);
+    console.log(isoBytes);
 </script>
 </body>
 </html>
