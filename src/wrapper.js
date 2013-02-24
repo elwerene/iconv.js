@@ -1,5 +1,5 @@
 /**
- * License: LGPL v2
+ * License: LGPL v3
  * @author mb@w69b.com (Manuel Braun)
  */
 (function(globalScope) {
@@ -16,7 +16,7 @@
    * @param {string} inCharset encoding of inBytes.
    * @param {string} outCharset desired encoding of output.
    * @return {Array.<number>} byte sequence of string encoded in outCharset, or
-   * in case of errors.
+   * null in case of errors.
    */
   function convert(inBytes, inCharset, outCharset) {
     if (!inBytes || !inBytes.length) return null;
