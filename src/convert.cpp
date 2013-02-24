@@ -1,11 +1,5 @@
-// #include <string.h>
-// #include <stdio.h>
-
-// #include <string>
-
 #include "./iconv_string.h"
 #include "./convert.h"
-
 
 extern "C" {
 
@@ -25,28 +19,3 @@ extern "C" {
   }
 }
 
-// bool IConv::convert(const std::string& in, std::string& out,
-//                            const std::string& from_encoding,
-//                            const std::string& to_encoding) {
-//   char* result = NULL;
-//   if(convert_c(in.c_str(), &result,
-//                from_encoding.c_str(), to_encoding.c_str())) {
-//     out.assign(result);
-//     return true;
-//   }
-//   return false;
-// };
-
-// int main(int argc, char** argv) {
-//  char * s = "\xB6\xE2ʸ\xC2\xCE";
-//  char* result = NULL;
-//  convert(s, &result, "EUC-JP", "UTF-8");
-//  printf("result: %s\n", result);
-// }
-//
-// int main(int argc, char** argv) {
-//  const char * s = "\xB6\xE2ʸ\xC2\xCE";
-//  std::string result;
-//  iconv::convert(s, result, "EUC-JP", "UTF-8");
-//  printf("result: %s\n", result.c_str());
-// }
