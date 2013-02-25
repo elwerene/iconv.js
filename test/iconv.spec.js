@@ -39,6 +39,12 @@ describe('iconv tests', function() {
     expect(converted).toEqual([0xe3, 0xbe]);
   });
 
+  iit('converts cp437 to utf8', function() {
+    // this requires --enable-extra-encodings for libiconv to work.
+    var bytes = iconv.convert([0xA1, 0xA2, 0xA3], 'CP437', 'UTF-8');
+    expect(bytes).not.toBeNull();
+  });
+
   it('should convert forth and back', function() {
     testIdentity('hello öÄÖ€i', 'ISO8859-15');
     testIdentity('äöÄlke@$', 'ISO8859-1');

@@ -4,7 +4,7 @@ iconv.js is libiconv compiled to javascript with emscripten and a simple wrapper
 around it. So it supports all charsets that libiconv supports. 
 
 It is intended to be used in WebApps that have to deal with multiple character
-encodings of binary data.  It has quite a heavy footprint of 823K (gzipped),
+encodings of binary data.  It has quite a heavy footprint of 902K (gzipped),
 mainly due to large character conversion tables included in libiconv. So you
 probably only want to load it when really needed.
 
