@@ -19,7 +19,8 @@
    * null in case of errors.
    */
   function convert(inBytes, inCharset, outCharset) {
-    if (!inBytes || !inBytes.length) return null;
+    if (!inBytes || typeof(inBytes.length) != 'number') return null;
+    if (inBytes.length === 0) return [];
     // Real stuff, fill buffer with bytes.
     var len = inBytes.length;
     var inBuffer = malloc(len + 1);

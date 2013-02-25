@@ -45,6 +45,10 @@ describe('iconv tests', function() {
     testIdentity('駕滑葛褐', 'SHIFT-JIS');
   });
 
+  it('empty input should return empty output', function() {
+    expect(iconv.convert([], 'UTF-8', 'ISO8859-1')).toEqual([]);
+  });
+
   it('should return null on invalid charsets', function() {
     expect(iconv.convert([0x20], 'UTF-8', 'invalid')).toBeNull();
     expect(iconv.convert([0x20], 'invalid', 'UTF-8')).toBeNull();
