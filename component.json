@@ -2,6 +2,12 @@
   "name": "iconv.js",
   "version": "0.1.0",
   "main": "./iconv.js",
+  "ignore": [
+    "test/",
+    "src/",
+    "build.sh",
+    "testacular.conf.js"
+  ]
   "dependencies": {
   }
 }
