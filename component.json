@@ -6,6 +6,9 @@
     "test/",
     "src/",
     "build.sh",
+    "LICENSE",
+    "README.md",
+    ".*",
     "testacular.conf.js"
   ],
   "dependencies": {
