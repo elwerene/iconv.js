@@ -7,7 +7,7 @@
     "src/",
     "build.sh",
     "testacular.conf.js"
-  ]
+  ],
   "dependencies": {
   }
 }
