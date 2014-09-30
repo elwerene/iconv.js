@@ -8,6 +8,18 @@ encodings of binary data.  It has quite a heavy footprint of 902K (gzipped),
 mainly due to large character conversion tables included in libiconv. So you
 probably only want to load it when really needed.
 
+## Compile libiconv
+
+```bash
+export CXX=emcc
+export CC=emcc
+export LD=emcc
+
+make clean
+./configure --disable-shared --enable-static
+make
+```
+
 ## Usage
 
 Example:
@@ -16,7 +28,7 @@ Example:
 // e.g. use utf8.js to obtain this from a string.
 var bytes = [226, 130, 172, 197, 147 ];  
 // Convert to ISO8859-15
-var isoBytes = iconv.convert(utf8Bytes, 'UTF-8', 'ISO8859-15');
+var isoBytes = iconv.convert(bytes, 'UTF-8', 'ISO8859-15');
 // Encoding of '€œ' in ISO8859-15
 // isoBytes = [0xA4, 0xBD];
 ```

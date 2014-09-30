@@ -1,5 +1,9 @@
 #include "./iconv_string.h"
 #include "./convert.h"
+#include <errno.h>
+#include <string.h>
+#include <stdio.h>
+#include <iostream>
 
 extern "C" {
 
@@ -14,6 +18,7 @@ extern "C" {
                          in, in + in_len, &out, NULL) >= 0) {
       return out;
     } else {
+      std::cout << "ERROR:" << strerror(errno) << std::endl;
       return NULL;
     }
   }
